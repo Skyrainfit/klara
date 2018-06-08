@@ -9,11 +9,11 @@ class Klsecurity extends CI_Model
         - some external API requests are routed in config/router.php
 
         User auth is as follows:
-        0   - disabled      - No authentication needed
+        0   - disabled      - Unauthenticated user
         1   - suspended     - User suspended from system
-        2   - registered    - User allowed to view/add jobs but are restricted only to itself.
+        2   - registered    - User allowed to view/add jobs, quotas enforeced
         4   - observer      - Not used
-        8   - poweruser     - User allowed to view/add all jobs.
+        8   - poweruser     - User allowed to view/add jobs, quotas disabled
         16  - Admin         - God
     */
     private $auth_disabled    = 0;
@@ -54,7 +54,7 @@ class Klsecurity extends CI_Model
         {
             $this_controller_restriction = $this->controller_perms[$controller_full_path];
             $this->authorized_for_level($this_controller_restriction);
-            // If we got there, then everything's fine!
+            // If we got there, then every-thing's fine!
             $user_carry_on = true;
         }
         // If the full path is not in the list of controllers, maybe it's an API endpoint

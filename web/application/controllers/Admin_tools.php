@@ -4,7 +4,7 @@ class Admin_tools extends CI_Controller
 {
 
     // Since there is no admin control, here are the tools allowing anyone 
-    // These functinos are used to
+    // These functions are used to
     // - gen_pass => generate a secure password + the corresponding bcrypt hash 
     // - generate_users => generate user accounts + passwords as well as the relevant SQL statements in order to be inserted in the DB server
     // 
@@ -24,9 +24,6 @@ class Admin_tools extends CI_Controller
         {
             $klara_location = "https://127.0.0.1/";
             echo "Here are your login details for accessing GReAT KLara system located at $klara_location\n";
-            echo "\n* Htaccess login:\n";
-            echo "User: $user_name\n";
-            echo "Pass: $user_pass\n";
             echo "\n* Web login:\n";
             echo "User: $user_name\n";
             echo "Pass: $user_pass\n";
